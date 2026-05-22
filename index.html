@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MMKS Digital Marketing Agency helps Tamil Nadu businesses grow online with SEO, social media marketing, branding, website design, and local digital advertising.">
+    <meta name="keywords" content="digital marketing, Tamil Nadu, SEO, social media marketing, branding, website design, local business marketing, MMKS agency">
+    <title>MMKS Digital Marketing Agency - Professional Digital Marketing Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #001F4D;
+            --primary-light: #0033A0;
+            --accent-green: #39B54A;
+            --accent-yellow: #F4C400;
+            --accent-blue: #3B82F6;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --medium-gray: #8B92A0;
+            --dark-gray: #1F2937;
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.9rem 1.8rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 0.8rem 1.8rem;
+        }
+
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            width: auto;
+            max-width: 250px;
+            max-height:150px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-text span {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--dark-gray);
+        }
+
+        .logo-text small {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+            margin-left: auto;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition);
+            padding-bottom: 0.3rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .btn-contact-nav {
+            margin-left: 1.5rem;
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-contact-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.5);
+            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark-gray);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            margin-top: 80px;
+            background-image: url('src/BG%20IMAGE.jpg'), radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 28%), linear-gradient(135deg, #1F2A82 0%, #323DDB 45%, #0E79D3 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+            min-height: calc(100vh - 80px);
+            padding: 5rem 0 4rem;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.2fr 0.9fr;
+            gap: 10rem;
+            align-items: center;
+        }
+
+        .hero-left h1 {
+            font-size: clamp(3rem, 5vw, 4.8rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.6rem;
+            animation: fadeInUp 0.8s ease-out;
+            letter-spacing: -1.4px;
+            max-width: 760px;
+        }
+
+        .hero-left p {
+            font-size: 1.05rem;
+            line-height: 1.2;
+            margin-bottom: 22rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+            max-width: 620px;
+            gap: 10px;
+        }
+
+        .hero-left .hero-note {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 12.5rem;
+            max-width: 600px;
+        }
+
+        .hero-right {
+            animation: fadeInRight 0.8s ease-out 0.4s backwards;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0;
+        }
+
+        .floating-card {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(16px);
+            border-radius: 28px;
+            padding: 2rem;
+            max-width: 460px;
+            width: 100%;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .floating-card h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+            font-weight: 800;
+            text-align: center;
+            letter-spacing: -0.4px;
+            font-size: 1.3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark-gray);
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: #FFFFFF;
+            color: #111827;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #9CA3AF;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 4px rgba(57, 181, 74, 0.12);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-send {
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+            padding: 1rem 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
+        }
+
+        .btn-send:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.35);
+            background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+        }
+
+        .info-cards {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12.5rem;
+            margin-top: 10.5rem;
+            width: 200%;
+            z-index: 2;
+        }
+
+        .info-card {
+            backdrop-filter: blur(18px);
+            border-radius: 22px;
+            padding: 1.6rem 1.8rem;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            animation: slideUp 0.8s ease-out 0.6s backwards;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-height: 120px;
+        }
+
+        .info-card.info-hours {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));
+        }
+
+        .info-card.info-phone {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.95), rgba(0, 204, 255, 0.95));
+        }
+
+        .info-card i {
+            font-size: 2.2rem;
+            margin-bottom: 0;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.16);
+            border-radius: 14px;
+        }
+
+        .info-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            opacity: 0.9;
+            margin-bottom: 0.35rem;
+        }
+
+        .info-card p {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .info-card.info-phone p {
+            font-size: 1.3rem;
+        }
+
+        .hero-right .floating-card {
+            max-width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-right {
+                align-items: center;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero {
+                padding: 4rem 0 5rem;
+            }
+
+            .hero-left h1 {
+                font-size: 2.7rem;
+            }
+
+            .hero-left p,
+            .hero-left .hero-note {
+                font-size: 1rem;
+            }
+
+            .floating-card {
+                padding: 1.6rem;
+                border-radius: 24px;
+            }
+
+            .info-cards {
+                padding: 0 1rem;
+            }
+        }
+
+        /* ===== ABOUT SECTION ===== */
+        .about {
+            margin-top: 150px;
+            padding: 6rem 2rem;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .about-description {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+        }
+
+        .features-list {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+
+        .feature-item i {
+            color: var(--accent-green);
+            font-size: 1.2rem;
+        }
+
+        .btn-learn-more {
+            background: transparent;
+            color: var(--accent-green);
+            padding: 0.8rem 1.8rem;
+            border: 2px solid var(--accent-green);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-learn-more:hover {
+            background: var(--accent-green);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== FOUNDERS SECTION ===== */
+        .founders {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .founders-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .founders-image {
+            position: relative;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .founders-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .founders-content {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .founders-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            letter-spacing: -1px;
+        }
+
+        .founders-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .btn-view-more {
+            background: transparent;
+            color: var(--accent-blue);
+            padding: 0.8rem 1.8rem;
+            border: 2px solid var(--accent-blue);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-view-more:hover {
+            background: var(--accent-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .portfolio-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .portfolio-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #E5E7EB 0%, #D1D5DB 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-card:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .portfolio-number {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .portfolio-info {
+            padding: 2rem;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .portfolio-info p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== WHY CHOOSE US SECTION ===== */
+        .why-choose {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+
+        .why-choose-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .why-choose-image {
+            position: relative;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .why-choose-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+        }
+
+        .why-choose-content {
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .why-choose-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
+            color: var(--dark-gray);
+            letter-spacing: -1px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #E5E7EB;
+            transition: var(--transition);
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(57, 181, 74, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+
+        .benefit-content p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+
+        .btn-contact-me {
+            background: var(--accent-yellow);
+            color: var(--dark-gray);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(244, 196, 0, 0.3);
+            margin-top: 1rem;
+        }
+
+        .btn-contact-me:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(244, 196, 0, 0.4);
+            background: #E6B800;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .testimonials-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid #E5E7EB;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+        }
+
+        .stars {
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-title {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+        }
+     /* ===== FAQ SECTION ===== */
+        .faq {
+            padding: 6rem 2rem;
+            background: var(--light-gray);
+        }
+ 
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+ 
+        .faq-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+ 
+        .faq-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--dark-gray);
+        }
+ 
+        .faq-title p {
+            color: var(--medium-gray);
+            font-size: 1rem;
+        }
+ 
+        .accordion-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border: 1px solid #E5E7EB;
+            transition: var(--transition);
+        }
+ 
+        .accordion-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+ 
+        .accordion-header {
+            padding: 1.5rem;
+            background: var(--white);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            border: none;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+ 
+        .accordion-header:hover {
+            background: var(--light-gray);
+        }
+ 
+        .accordion-header.active {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(57, 181, 74, 0.1) 100%);
+            color: var(--primary-dark);
+        }
+ 
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+ 
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+ 
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: var(--light-gray);
+        }
+ 
+        .accordion-content.active {
+            max-height: 500px;
+        }
+ 
+        .accordion-text {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--medium-gray);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-tagline {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-icon:hover {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-item i {
+            margin-top: 0.2rem;
+            color: var(--accent-green);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--white);
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-left h1 {
+                font-size: 2rem;
+            }
+
+            .hero-left p {
+                font-size: 0.95rem;
+            }
+
+            .info-cards {
+                position: static;
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                margin-top: 2rem;
+            }
+
+            .founders-container,
+            .why-choose-container {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-section-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .features-list {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="src/LOGO.png" alt="MMKS Logo">
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <a href="contact.html" class="btn-contact-nav">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-left">
+                <h1>Professional Digital Marketing Services for Tamil Nadu Businesses</h1>
+                <p>Grow your business with creative digital marketing, branding, and modern design solutions.
+                   <br> We help businesses build a strong online presence and reach the right audience.</p>
+            </div>
+            <div class="hero-right">
+                <div class="floating-card">
+                    <h3>Request a Call Back</h3>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last name</label>
+                            <input type="text" placeholder="Your last name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your email*</label>
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message*</label>
+                            <textarea placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-send">Send Message</button>
+                    </form>
+                </div>
+                <div class="info-cards">
+                    <div class="info-card info-hours">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Mon-Sat 8am-8pm</p>
+                        </div>
+                    </div>
+                    <div class="info-card info-phone">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Emergency Call</h3>
+                            <p>+91 86087 17184</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <span class="section-subtitle">(WHO I AM)</span>
+            <h2 class="section-title">Licensed, background-checked and local.</h2>
+            <p class="about-description">MMKS Digital Marketing Agency is a modern digital marketing and creative solutions agency focused on helping businesses grow online with smart branding, marketing, and technology-driven strategies. We specialize in services such as Social Media Marketing, SEO, Meta Ads, Content Marketing, Lead Generation, Poster Designing, Branding, and AI-powered business solutions.</p>
+            <div class="features-list">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Safe registered where required</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Clean, on-time visits</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Digital quotes & receipts</span>
+                </div>
+            </div>
+            <button class="btn-learn-more" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">Learn more about me →</button>
+        </div>
+    </section>
+
+    <!-- FOUNDERS SECTION -->
+    <section class="founders" id="about-section">
+        <div class="founders-container">
+            <div class="founders-image">
+                <img src="src/founder.jpeg" alt="Founders">
+            </div>
+            <div class="founders-content">
+                <span class="section-subtitle" style="color: var(--accent-blue);">(WE ARE FOUNDERS)</span>
+                <h2>I AM SANKARANARAYANAN</h2>
+                <p>Founded with a vision to help businesses grow digitally, MMKS Digital Marketing Agency focuses on creative marketing, practical learning, and real business results. Our goal is to make digital success simple, affordable, and accessible for everyone.</p>
+                <h2 style="margin-top: 2rem;">I'M KABILAL</h2>
+                <p>Passionate about creativity and innovation, the Co-Founder of MMKS Digital Marketing Agency is dedicated to helping brands build a strong online presence through smart digital strategies and modern design solutions.</p>
+                <button class="btn-view-more" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'});">VIEW MORE</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section class="portfolio">
+        <div class="portfolio-container">
+            <div class="portfolio-title">
+                <span class="section-subtitle">(OUR WORK)</span>
+                <h2 class="section-title">Portfolio: Real Projects & Results</h2>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">1</div>
+                        <img src="src/sj_design_agency.jpeg.jpg" alt="SJ Design Agency Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>SJ Design Agency Branding</h3>
+                        <p>Professional graphic design, social media visuals, and brand storytelling for a creative studio.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">2</div>
+                        <img src="src/powerbuild_hardware.jpeg.jpg" alt="PowerBuild Hardware Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>PowerBuild Hardware</h3>
+                        <p>Powerful brand identity and marketing collateral for a construction and hardware business.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">3</div>
+                        <img src="src/ms_design_creatix.jpeg.jpg" alt="MS Design Creatix Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>MS Design Creatix</h3>
+                        <p>Creative brand development and visual identity for a modern design agency.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">4</div>
+                        <img src="src/trendwear_fashion.jpg" alt="Trend Wear Fashion Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Trend Wear Fashion</h3>
+                        <p>Fashion marketing and creative design that supports local retail growth and customer loyalty.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">5</div>
+                        <img src="src/aj_collection.png" alt="AJ Collection Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>AJ Collection</h3>
+                        <p>Brand refresh and campaign design for a premium clothing label.</p>
+                    </div>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <div class="portfolio-number">6</div>
+                        <img src="src/kovilpatti_snakes.png" alt="Kovilpatti Snakes Branding">
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Kovilpatti Snakes</h3>
+                        <p>Local business marketing and web presence optimization for a niche regional brand.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="why-choose">
+        <div class="why-choose-container">
+            <div class="why-choose-image">
+                <img src="src/thinking.png" alt="Why Choose Us">
+            </div>
+            <div class="why-choose-content">
+                <h2>Why people choose My Services</h2>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Proven Track Record</h3>
+                        <p>5+ years of digital marketing expertise delivering exceptional results for 50+ businesses across Tamil Nadu with documented success stories.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Truly Affordable Pricing</h3>
+                        <p>Premium quality digital marketing services at prices designed specifically for small and growing businesses without compromising on results.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Dedicated 24/7 Support</h3>
+                        <p>Responsive support team available via WhatsApp, email, and phone for quick assistance and ongoing client success. We're always here when you need us.</p>
+                    </div>
+                </div>
+                <button class="btn-contact-me">Contact Me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2 class="section-title">Client Testimonials & Success Stories</h2>
+                <p style="color: var(--medium-gray);">Real feedback from real customers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The GMB management from MMKS brought us so many local customers we never reached before. Best investment for our shop!"</p>
+                    <p class="testimonial-author">SJ Design Agency</p>
+                    <p class="testimonial-title">Design Agency Owner, Tamil Nadu</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"MMKS transformed our entire digital presence. Within 6 months, our sales increased by 300%. Truly affordable and highly professional!"</p>
+                    <p class="testimonial-author">Trend Wear Fashion</p>
+                    <p class="testimonial-title">E-Commerce Business Owner, Kovilpatti, Homeowner</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"From 2K to 50K Instagram followers in just a few months! MMKS exceeded all our expectations and the pricing is very reasonable"</p>
+                    <p class="testimonial-author">AJ-COLLECTION.</p>
+                    <p class="testimonial-title">Fashion brand Owner</p>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section class="faq">
+        <div class="faq-container">
+            <div class="faq-title">
+                <h2>Have questions? I've got answers.</h2>
+                <p>Common questions about my digital marketing services</p>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header active" onclick="toggleAccordion(this)">
+                    <span>What services does MMKS Digital Marketing Agency provide?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content active">
+                    <div class="accordion-text">We provide services like Social Media Marketing, SEO, Meta Ads, Content Marketing, Poster Design, Branding, Lead Generation, and AI-based digital solutions.</div>
+                </div>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Is this course beginner friendly?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-text">Yes, all our courses and training programs are completely beginner friendly with practical step-by-step teaching.</div>
+                </div>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Do you provide online classes?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-text">Yes, we provide live online classes in both Tamil and English for students, freelancers, and business owners.</div>
+                </div>
+            </div>
+ 
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Will I get practical training and support?</span>
+                    <div class="accordion-icon">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </button>
+                <div class="accordion-content">
+                    <div class="accordion-text">Yes, we focus on real-time practical learning and also provide dedicated support through WhatsApp groups.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MMKS AGENCY</h3>
+                    <p class="footer-tagline">"Let's grow your business digitally with smart, creative, and affordable solutions."</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Social</h3>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 86087 17184</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>mmksagency@official@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Shanmuga nagar, Kadalaiyur road, kovilpatti tamil Nadu -628501</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 MMKS Digital Marketing Agency, Kovilpatti. All rights reserved. | Crafted with <i class="fas fa-heart" style="color: var(--accent-green);"></i> for your success</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinksMenu = document.getElementById('navLinks');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinksMenu.classList.remove('active');
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+        // Set active nav link based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you soon.');
+            document.getElementById('contact-form').reset();
+        });
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const accordionItem = button.parentElement;
+            const accordionContent = accordionItem.querySelector('.accordion-content');
+            const isActive = button.classList.contains('active');
+
+            // Close all other accordions
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                if (header !== button) {
+                    header.classList.remove('active');
+                    header.parentElement.querySelector('.accordion-content').classList.remove('active');
+                }
+            });
+
+            // Toggle current accordion
+            button.classList.toggle('active');
+            accordionContent.classList.toggle('active');
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-card, .testimonial-card, .service-card').forEach(element => {
+            element.style.opacity = '0';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
